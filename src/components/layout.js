@@ -1,63 +1,54 @@
 import React from "react"
-import { Link } from "gatsby"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 import About from "./About"
+import Header from "./Header"
 import Footer from "./Footer"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, children } = this.props
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1>
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
     return (
       <div>
         <GlobalStyles />
-        <header>{header}</header>
-        <main>{children}</main>
-        <About />
+        <Header location={location} />
+        <Container>
+          <About />
+          <Main>{children}</Main>
+        </Container>
         <Footer />
       </div>
     )
   }
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 96%;
+  max-width: 1040px;
+  min-height: calc(100% - 65px - 144px);
+  margin: 0 auto;
+  padding-top: 50px;
+  @media (max-width: 767px) {
+    display: block;
+    width: 94%;
+    min-height: calc(100% - 51px - 114px);
+  }
+`
+
+const Main = styled.main`
+  order: 2;
+  width: calc(100% - 240px);
+  margin-left: 40px;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-left: 0;
+  }
+`
 
 export default Layout
 

@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { graphql } from "gatsby"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Article from "../components/Article"
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,29 +15,30 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3 style={{}}>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
+        <Unit>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Article
+                key={node.fields.slug}
+                title={title}
+                date={node.frontmatter.date}
+                link={node.fields.slug}
+                thumb="https://nanaki.design/wp-content/uploads/2019/05/Artboard-5.png"
               />
-            </div>
-          )
-        })}
+            )
+          })}
+        </Unit>
       </Layout>
     )
   }
 }
+
+const Unit = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
 export default BlogIndex
 

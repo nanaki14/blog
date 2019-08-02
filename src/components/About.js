@@ -52,7 +52,13 @@ const About = () => {
   )
 }
 
-const Wrapper = styled.article``
+const Wrapper = styled.article`
+  order: 1;
+  width: 200px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
 
 const Inner = styled.div`
   display: flex;
