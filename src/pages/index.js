@@ -8,13 +8,12 @@ import Article from "../components/Article"
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    console.log(data)
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO />
         <Unit>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

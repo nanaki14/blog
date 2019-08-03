@@ -68,6 +68,20 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "favicon-16.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "favicon-32.png",
+        },
+      ]}
     />
   )
 }
