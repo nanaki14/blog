@@ -40,6 +40,9 @@ const Unit = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 767px) {
+    padding-top: 50px;
+  }
 `
 
 export default BlogIndex

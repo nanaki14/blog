@@ -14,8 +14,8 @@ class Layout extends React.Component {
         <GlobalStyles />
         <Header location={location} />
         <Container>
-          <About />
           <Main>{children}</Main>
+          <About />
         </Container>
         <Footer />
       </div>
@@ -37,6 +37,7 @@ const Container = styled.div`
     display: block;
     width: 94%;
     min-height: calc(100% - 51px - 114px);
+    padding-top: 0px;
   }
 `
 

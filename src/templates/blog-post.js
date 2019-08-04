@@ -185,7 +185,7 @@ const Content = styled.div`
     font-size: 1.6rem;
     color: $black100;
 
-    line-height: (27/16);
+    line-height: ${27 / 16};
     text-align: center;
     &:after {
       content: "";
@@ -199,7 +199,7 @@ const Content = styled.div`
   p {
     margin-bottom: 20px;
     font-size: 1.4rem;
-    line-height: (28/14);
+    line-height: ${28 / 14};
   }
   a {
     text-decoration: underline;
@@ -211,6 +211,40 @@ const Content = styled.div`
     display: block;
     max-width: 100%;
     margin: 0 auto 20px;
+  }
+  pre {
+    margin-bottom: 20px;
+  }
+  p > code {
+    color: #424242;
+    vertical-align: 2px;
+    font-size: 88%;
+    border: 1px solid #e0e0e0;
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 2px;
+    line-height: 1;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  pre > code {
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #394034;
+    color: #f8f8f2;
+    display: block;
+    line-height: 1.4;
+    padding: 40px 24px;
+    text-align: left;
+    overflow: auto;
+    resize: horizontal;
+    z-index: 2;
+    border: 0;
+    border-radius: 8px;
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: 14px;
+    font-weight: 700;
   }
 `
 

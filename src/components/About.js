@@ -57,6 +57,7 @@ const Wrapper = styled.article`
   width: 200px;
   @media (max-width: 767px) {
     width: 100%;
+    margin-top: 48px;
   }
 `
 
@@ -81,6 +82,7 @@ const Profile = styled.figure`
   padding: 30px 0;
   @media (max-width: 767px) {
     padding: 20px 10px;
+    text-align: center;
   }
 `
 
