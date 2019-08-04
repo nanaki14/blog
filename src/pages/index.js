@@ -22,8 +22,11 @@ class BlogIndex extends React.Component {
                 key={node.fields.slug}
                 title={title}
                 date={node.frontmatter.date}
-                link={node.fields.slug}
-                thumb="https://nanaki.design/wp-content/uploads/2019/05/Artboard-5.png"
+                link={`${node.frontmatter.category}/${node.fields.slug}`}
+                thumb={
+                  node.frontmatter.thumb &&
+                  node.frontmatter.thumb.childImageSharp.fluid.src
+                }
               />
             )
           })}
@@ -59,6 +62,14 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            category
+            thumb {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

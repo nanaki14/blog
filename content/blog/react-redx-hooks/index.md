@@ -3,22 +3,22 @@ title: "react-reduxのHooksAPI触ってみた"
 date: "2019-05-30"
 description: "react-reduxの次期バージョンにHooksAPIが追加されていたのですこし触ってみました。"
 category: javascript
-thumb: ./thumb.png
+thumb: "./thumb.png"
 ---
 
 こんにちわ、ななきです。
 
-TypeScriptとReduxが楽しい今日このごろです。
+TypeScript と Redux が楽しい今日このごろです。
 
-そんな中react-reduxの次期バージョンにHooksAPIが追加されていたのですこし触ってみました。
+そんな中 react-redux の次期バージョンに HooksAPI が追加されていたのですこし触ってみました。
 
-APIの詳細は[こちら](https://react-redux.js.org/next/api/hooks)です。
+API の詳細は[こちら](https://react-redux.js.org/next/api/hooks)です。
 
 ## useStore
 
-useStoreはProviderへ渡しているstoreオブジェクトを参照できる関数です。
+useStore は Provider へ渡している store オブジェクトを参照できる関数です。
 
-使う前の準備としてはいつもどおりProviderにstoreを渡します。
+使う前の準備としてはいつもどおり Provider に store を渡します。
 
 ```
 const store = createStore()
@@ -32,7 +32,7 @@ export default function App() {
 }
 ```
 
-次にその下層コンポーネント内でuseStoreしましょう
+次にその下層コンポーネント内で useStore しましょう
 
 ```
 import React from 'react'
@@ -45,14 +45,14 @@ const Components = () => {
 }
 ```
 
-これでstoreオブジェクトを参照できるようになります。
+これで store オブジェクトを参照できるようになります。
 
-ですが、直接storeを参照するのは推奨されていません、
-今までも`connect()`を使用していたようにHooksでも`useSelector`や`useDispatch`というHooksが用意されているのでそちらを見ていきましょう。
+ですが、直接 store を参照するのは推奨されていません、
+今までも`connect()`を使用していたように Hooks でも`useSelector`や`useDispatch`という Hooks が用意されているのでそちらを見ていきましょう。
 
 ## useSelector
 
-useSelectorではstoreのstateを参照できるようになります。
+useSelector では store の state を参照できるようになります。
 
 ```
 import React from 'react'
@@ -67,11 +67,11 @@ const Components = () => {
 }
 ```
 
-これは今までのconnectの第一引数でやってたことですね。
+これは今までの connect の第一引数でやってたことですね。
 
 ## useDispatch
 
-useDispatchはdispatch関数を扱えるようになります。
+useDispatch は dispatch 関数を扱えるようになります。
 
 ```
 import React from 'react'
@@ -91,12 +91,12 @@ const Components = () => {
 }
 ```
 
-Actionの中身については以前と同じくtypeを持ったオブジェクトを渡す形ですね
+Action の中身については以前と同じく type を持ったオブジェクトを渡す形ですね
 
 <h2>まとめ</h2>
 
-そんなわけでさっくりHooksAPI触ってみました。
+そんなわけでさっくり HooksAPI 触ってみました。
 
-ただコード載せただけみたいになってしまったので不明な箇所があればドキュメント読むとかTwitterで絡んでくれるとかしてください
+ただコード載せただけみたいになってしまったので不明な箇所があればドキュメント読むとか Twitter で絡んでくれるとかしてください
 
-Hooks個人的には今までのconnectより好きなので早く使っていきたいですね。
+Hooks 個人的には今までの connect より好きなので早く使っていきたいですね。

@@ -21,7 +21,8 @@ class BlogPostTemplate extends React.Component {
             <Head>
               <HeadImage
                 style={{
-                  backgroundImage: `url(https://nanaki.design/wp-content/uploads/2019/05/Artboard-5.png)`,
+                  backgroundImage: `url(${post.frontmatter.thumb &&
+                    post.frontmatter.thumb.childImageSharp.fluid.src})`,
                 }}
               />
               <HeadInner>
@@ -231,6 +232,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
+        thumb {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
