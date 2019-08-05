@@ -3,7 +3,7 @@ title: "react-reduxのHooksAPI触ってみた"
 date: "2019-05-30"
 description: "react-reduxの次期バージョンにHooksAPIが追加されていたのですこし触ってみました。"
 category: javascript
-thumb: "./thumb.png"
+thumb: "./react-redx-hooks.png"
 ---
 
 こんにちわ、ななきです。
