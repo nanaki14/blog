@@ -12,12 +12,7 @@ const Article = ({ title, link, date, thumb }) => {
         </Thumb>
         <Detail>
           <Title>{title}</Title>
-          <Date>
-            {() => {
-              const execdate = new Date(date)
-              return moment(execdate.toISOString()).format("YYYY.MM.DD")
-            }}
-          </Date>
+          <Date>{moment(date).format("YYYY.MM.DD")}</Date>
         </Detail>
       </Link>
     </Wrapper>
