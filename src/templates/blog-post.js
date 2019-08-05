@@ -33,7 +33,10 @@ class BlogPostTemplate extends React.Component {
                 </Title>
                 <Info>
                   <span>
-                    {moment(post.frontmatter.date).format("YYYY.MM.DD")}
+                    {() => {
+                      const date = new Date(post.frontmatter.date)
+                      return moment(date.toISOString()).format("YYYY.MM.DD")
+                    }}
                   </span>
                 </Info>
               </HeadInner>
