@@ -1,7 +1,7 @@
 ---
-title: "Nuxt + Vuexでサクッとポートフォリオ作ってみた"
+title: "SPAでGTMやGAにtitleがうまく渡らない時の対処"
 date: "2019-05-13"
-description: "GW中にNuxt＋Vuexでポートフォリオサイトを作ったので紹介をしようかなと思います。"
+description: "Reactでhelmetを使ったtitleの変更後にGAやGTMに情報を伝える場合に反映前のものや、遷移前のページのものが伝わることがあったのでその対処法メモです。"
 category: javascript
 thumb: "./gtm-ga-title.jpg"
 ---
